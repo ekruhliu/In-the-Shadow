@@ -6,11 +6,6 @@ using UnityEngine.UI;
 public class LevelMenu : MonoBehaviour
 {
     [SerializeField] private Text _level;
-   
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -22,6 +17,8 @@ public class LevelMenu : MonoBehaviour
           if (_hit.collider.tag.Equals("Sphere"))
           {
              _level.text = _hit.collider.name;
+             if (Input.GetKey("return"))
+               Application.LoadLevel(_hit.collider.name);
           }
           else
              _level.text = " ";

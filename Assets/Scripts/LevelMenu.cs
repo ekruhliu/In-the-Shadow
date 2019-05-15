@@ -17,7 +17,7 @@ public class LevelMenu : MonoBehaviour
           if (_hit.collider.tag.Equals("Sphere"))
           {
              _level.text = _hit.collider.name;
-             if (Input.GetKey("return"))
+             if (Input.GetKey("return") && _hit.collider.gameObject.GetComponent<Sphere>().accept)
                Application.LoadLevel(_hit.collider.name);
           }
           else

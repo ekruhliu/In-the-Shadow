@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sphere
+  - TeaPot
+  - Elephant
+  - 4
+  - 2
+  - Earth
+  - Base
   layers:
   - Default
   - TransparentFX

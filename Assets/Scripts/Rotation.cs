@@ -1,34 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Experimental.UIElements;
 
 public class Rotation : MonoBehaviour
 {
     private bool click;
+    private bool done;
+    [SerializeField] private GameObject canvas;
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            click = true;
-        if (Input.GetMouseButtonUp(0))
-            click = false;
-        if (click)
-            OnMouseDrag();
+        if (!done)
+        {
+            if (Input.GetMouseButtonDown(0))
+                click = true;
+            if (Input.GetMouseButtonUp(0))
+                click = false;
+            if (click)
+                OnMouseDrag();
+        }
         //Debug.Log("X: " + gameObject.transform.rotation.x + " Y: " + gameObject.transform.rotation.y + " Z: " + gameObject.transform.rotation.z + " W: " + gameObject.transform.rotation.w);
-        if (((gameObject.transform.rotation.x >= 0.0f && gameObject.transform.rotation.x <= 0.2f)
-            && (gameObject.transform.rotation.y >= 0.9f && gameObject.transform.rotation.y <= 1.0f)
-            && (gameObject.transform.rotation.z >= -0.1f && gameObject.transform.rotation.z <= 0.0f)
-            && (gameObject.transform.rotation.w >= 0.2f && gameObject.transform.rotation.w <= 0.3f)))
-            Debug.Log("Completed");
-        else if (((gameObject.transform.rotation.x >= -0.1f && gameObject.transform.rotation.x <= 0.0f)
-                && (gameObject.transform.rotation.y >= -0.3f && gameObject.transform.rotation.y <= -0.2f)
-                && (gameObject.transform.rotation.z >= -0.1f && gameObject.transform.rotation.z <= 0.0f)
-                && (gameObject.transform.rotation.w >= 0.9f && gameObject.transform.rotation.w <= 1.0f)))
-            Debug.Log("Completed");
-        //right = 0.0-0.2, 0.9-1.0, 0.0- -0.1, 0.2-0.3
-        //left = 0.0-0.1, 0.2-0.3, 0.0-0.1, -1.0- -0.9
-        //transform.rotation.
+        Debug.Log(gameObject.tag);
+        if (gameObject.tag.Equals("TeaPot"))
+        {
+            if (((gameObject.transform.rotation.x >= -0.1f && gameObject.transform.rotation.x <= 0.2f)
+                 && (gameObject.transform.rotation.y >= 0.8f && gameObject.transform.rotation.y <= 1.0f)
+                 && (gameObject.transform.rotation.z >= -0.2f && gameObject.transform.rotation.z <= 0.1f)
+                 && (gameObject.transform.rotation.w >= 0.2f && gameObject.transform.rotation.w <= 0.3f)))
+            {
+                Debug.Log("Completed");
+                done = true;
+                canvas.gameObject.SetActive(true);
+            }
+        }
     }
 
     void OnMouseDrag()
@@ -39,4 +45,6 @@ public class Rotation : MonoBehaviour
         gameObject.transform.RotateAround(Vector3.up, -rotX);
         gameObject.transform.RotateAround(Vector3.right, -rotY);
     }
+
+    public void BackToMenu() { Application.LoadLevel("LevelMenu"); }
 }

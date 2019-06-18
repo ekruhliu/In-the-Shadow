@@ -21,13 +21,13 @@ public class Rotation : MonoBehaviour
             if (click)
                 OnMouseDrag();
         }
-        //Debug.Log("X: " + gameObject.transform.rotation.x + " Y: " + gameObject.transform.rotation.y + " Z: " + gameObject.transform.rotation.z + " W: " + gameObject.transform.rotation.w);
-        Debug.Log(gameObject.tag);
+        Debug.Log("X: " + gameObject.transform.rotation.x + " Y: " + gameObject.transform.rotation.y + " Z: " + gameObject.transform.rotation.z + " W: " + gameObject.transform.rotation.w);
+        //Debug.Log(gameObject.tag);
         if (gameObject.tag.Equals("TeaPot"))
         {
-            if (((gameObject.transform.rotation.x >= -0.1f && gameObject.transform.rotation.x <= 0.2f)
-                 && (gameObject.transform.rotation.y >= 0.8f && gameObject.transform.rotation.y <= 1.0f)
-                 && (gameObject.transform.rotation.z >= -0.2f && gameObject.transform.rotation.z <= 0.1f)
+            if (((gameObject.transform.rotation.x >= 0.0f && gameObject.transform.rotation.x <= 0.1f)
+                 && (gameObject.transform.rotation.y >= 0.94f && gameObject.transform.rotation.y <= 0.98f)
+                 && (gameObject.transform.rotation.z >= -0.07f && gameObject.transform.rotation.z <= 0.0f)
                  && (gameObject.transform.rotation.w >= 0.2f && gameObject.transform.rotation.w <= 0.3f)))
             {
                 Debug.Log("Completed");

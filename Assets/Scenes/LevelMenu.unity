@@ -1116,6 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: {fileID: 1919140938}
+  spheres: []
 --- !u!54 &1701314753
 Rigidbody:
   m_ObjectHideFlags: 0

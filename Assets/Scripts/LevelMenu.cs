@@ -7,18 +7,6 @@ using UnityEngine.UI;
 public class LevelMenu : MonoBehaviour
 {
    [SerializeField] private Text _level;
-   [SerializeField] private GameObject[] spheres;
-   private Player _player;
-
-   private void Start()
-   {
-      _player = this.gameObject.GetComponent<Player>();
-      /*spheres[0] = _player.lvl1;
-      spheres[1] = _player.lvl2;
-      spheres[2] = _player.lvl3;
-      spheres[3] = _player.lvl4;
-      spheres[4] = _player.lvl5;*/
-   }
 
    void Update()
     {
@@ -45,5 +33,15 @@ public class LevelMenu : MonoBehaviour
          gameObject.transform.Translate(-1f,0f,0f);
       if (Input.GetKey("right") && gameObject.transform.position.x < 40f)
          gameObject.transform.Translate(1f,0f,0f);
+   }
+
+   public void ExitGame()
+   {
+      /*PlayerPrefs.SetString("lvl2", GameManager.GM.AcceptSpheres[0].ToString());
+      PlayerPrefs.SetString("lvl3", GameManager.GM.AcceptSpheres[1].ToString());
+      PlayerPrefs.SetString("lvl4", GameManager.GM.AcceptSpheres[2].ToString());
+      PlayerPrefs.SetString("lvl5", GameManager.GM.AcceptSpheres[3].ToString());
+      PlayerPrefs.Save();*/
+      Application.Quit();
    }
 }

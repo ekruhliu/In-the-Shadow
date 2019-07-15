@@ -11,12 +11,10 @@ public class StartMenu : MonoBehaviour
     [SerializeField] private Button _continue;
     private Text _contText;
 
-    public bool canContinue;
     
     private void Awake()
     {
-        canContinue = false;
-        if (canContinue)
+        if (PlayerPrefs.HasKey("lvl2"))
         {
             _continue.GetComponent<Button>().enabled = true;
             _continue.GetComponent<Image>().color = new Color(255,255,255, 255);

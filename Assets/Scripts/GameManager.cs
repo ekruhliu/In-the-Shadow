@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager GM = null;
     public bool[] AcceptSpheres;
+    public bool TesterMode;
 
     private void Start()
     {

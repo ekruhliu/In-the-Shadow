@@ -37,11 +37,14 @@ public class LevelMenu : MonoBehaviour
 
    public void ExitGame()
    {
-      /*PlayerPrefs.SetString("lvl2", GameManager.GM.AcceptSpheres[0].ToString());
-      PlayerPrefs.SetString("lvl3", GameManager.GM.AcceptSpheres[1].ToString());
-      PlayerPrefs.SetString("lvl4", GameManager.GM.AcceptSpheres[2].ToString());
-      PlayerPrefs.SetString("lvl5", GameManager.GM.AcceptSpheres[3].ToString());
-      PlayerPrefs.Save();*/
+      if (!GameManager.GM.TesterMode)
+      {
+         PlayerPrefs.SetString("lvl2", GameManager.GM.AcceptSpheres[0].ToString());
+         PlayerPrefs.SetString("lvl3", GameManager.GM.AcceptSpheres[1].ToString());
+         PlayerPrefs.SetString("lvl4", GameManager.GM.AcceptSpheres[2].ToString());
+         PlayerPrefs.SetString("lvl5", GameManager.GM.AcceptSpheres[3].ToString());
+         PlayerPrefs.Save();
+      }
       Application.Quit();
    }
 }

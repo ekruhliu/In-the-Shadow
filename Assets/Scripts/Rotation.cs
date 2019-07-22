@@ -39,7 +39,7 @@ public class Rotation : MonoBehaviour
             {
                 done = true;
                 EndPlane.gameObject.SetActive(true);
-                //GameManager.GM.AcceptSpheres[0] = true;
+                GameManager.GM.AcceptSpheres[0] = true;
             }
         }
 
@@ -53,7 +53,7 @@ public class Rotation : MonoBehaviour
             {
                 done = true;
                 EndPlane.gameObject.SetActive(true);
-                //GameManager.GM.AcceptSpheres[1] = true;
+                GameManager.GM.AcceptSpheres[1] = true;
             }
         }
 
@@ -88,7 +88,7 @@ public class Rotation : MonoBehaviour
             {
                 done = true;
                 EndPlane.gameObject.SetActive(true);
-                //GameManager.GM.AcceptSpheres[2] = true; 
+                GameManager.GM.AcceptSpheres[2] = true; 
             }
         }
 
@@ -123,7 +123,7 @@ public class Rotation : MonoBehaviour
             {
                 done = true;
                 EndPlane.gameObject.SetActive(true);
-                //GameManager.GM.AcceptSpheres[3] = true; 
+                GameManager.GM.AcceptSpheres[3] = true; 
             }
         }
 
@@ -140,8 +140,8 @@ public class Rotation : MonoBehaviour
             }
         }
         
-        if (currentObj)
-            Debug.Log("X: " + currentObj.transform.rotation.x + " Y: " + currentObj.transform.rotation.y + " Z: " + currentObj.transform.rotation.z + " W: " + currentObj.transform.rotation.w);
+        //if (currentObj)
+        //    Debug.Log("X: " + currentObj.transform.rotation.x + " Y: " + currentObj.transform.rotation.y + " Z: " + currentObj.transform.rotation.z + " W: " + currentObj.transform.rotation.w);
         Pause();
     }
 
